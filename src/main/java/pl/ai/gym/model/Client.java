@@ -20,7 +20,7 @@ public class Client {
         @Id
         @Column(name ="ID_CLIENT")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long clientId;
+        private Integer clientId;
 
         @Column(name ="NAME")
         private String clientName;
@@ -31,9 +31,5 @@ public class Client {
         @Column(name ="PHONE")
         private String clientPhone;
 
-        @ManyToOne(fetch = FetchType.EAGER)
-        @JoinColumn(name = "ID_GYM")
-        private Gym gym;
     }
 
-}
