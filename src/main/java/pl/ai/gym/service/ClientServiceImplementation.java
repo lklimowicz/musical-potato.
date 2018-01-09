@@ -33,4 +33,4 @@ public class ClientServiceImplementation implements ClientService {
         return clientRepository.findAll();
     }
 }
-}
+

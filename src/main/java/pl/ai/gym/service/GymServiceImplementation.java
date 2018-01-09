@@ -21,4 +21,4 @@ public class GymServiceImplementation implements GymService {
         return gymRepository.findAll();
     }
 }
-}
+

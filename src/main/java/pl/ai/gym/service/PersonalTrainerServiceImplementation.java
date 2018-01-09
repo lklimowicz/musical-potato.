@@ -33,4 +33,3 @@ public class PersonalTrainerServiceImplementation implements PersonalTrainerServ
             return personalTrainerRepository.findAll();
         }
     }
-}
