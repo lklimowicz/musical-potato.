@@ -1,3 +1,36 @@
-<p>
-  delete-client works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+          </div>
+        </header>
+      </section>
+      <section class="main">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>clientId</th>
+            <th>clientName</th>
+            <th>clientSurname</th>
+            <th>clientPhone</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let client of clients">
+            <th scope="row">{{client.clientId}}</th>
+            <td>{{client.clientName}}</td>
+            <td>{{client.clientSurname}}</td>
+            <td>{{client.clientPhone}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="deleteClient(client.clientId)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

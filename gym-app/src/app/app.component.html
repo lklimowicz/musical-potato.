@@ -1,13 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Witaj w systemie zarzadzania silownia!
+    Aplikacja do zarządzania siłownią.
   </h1>
-  <img width="300" alt="GymApp" src="./topsas.jpeg"">
-</div>
-<h2>Wybierz opcje:</h2>
   
-	<button type="button" routerLink="/addclient" routerLinkActive="activate">DODAJ KLIENTA</button>
+</div>
+
+  
+	<button type="button" routerLink="/add-client" routerLinkActive="activate">Dodanie nowego klienta</button>
+	<button type="button" routerLink="/delete-client" routerLinkActive="activate">Usuniecie klienta</button>
+	<button type="button" routerLink="/add-personaltrainer" routerLinkActive="activate">Dodanie nowego trenera</button>
+	<button type="button" routerLink="/delete-personaltrainer" routerLinkActive="activate">Usuniecie trenera</button>
 	
 
 <router-outlet></router-outlet>

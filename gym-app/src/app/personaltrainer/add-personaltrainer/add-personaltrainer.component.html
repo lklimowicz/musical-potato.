@@ -1,3 +1,42 @@
-<p>
-  add-personaltrainer works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+         <section>
+        <form novalidate [formGroup]="trainerForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>trainerName</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="trainerName">
+            </div>
+
+            <div class="form-group">
+              <label>trainerSurname</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="trainerSurname">
+            </div>
+            <div class="form-group">
+              <label>trainerPhone</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="trainerPhone">
+            </div>
+       
+            
+            <div class="form-group">
+              <label>Gym:</label>
+              <br>
+              <select [(ngModel)] = "Gym" class="form-control" formControlName="gym">
+                <option *ngFor="let gym of gyms" [ngValue]="gym">{{gym.gymLocalization}}
+                </option>
+              </select >
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" [disabled]="!trainerForm.valid">Add</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

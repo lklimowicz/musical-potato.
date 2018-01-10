@@ -1,9 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>Dodawanie klienta</h2>
-
-      <section>
+            <section>
         <form novalidate [formGroup]="clientForm" (ngSubmit)="onSubmit()">
           <fieldset>
             <div class="form-group">
@@ -12,30 +10,20 @@
                      class="form-control"
                      formControlName="clientName">
             </div>
-
             <div class="form-group">
               <label>Nazwisko:</label>
               <input type="text"
                      class="form-control"
                      formControlName="clientSurname">
             </div>
-
-
             <div class="form-group">
-              <label>Email:</label>
-              <input type="email"
+              <label>Phone:</label>
+              <input type="textl"
                      class="form-control"
                      formControlName="clientPhone">
             </div>
-
-            
-
-       
-         
-
-    
-          </fieldset>
-          <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">Submit</button>
+=          </fieldset>
+          <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">Zatwierdz</button>
         </form>
       </section>
     </div>

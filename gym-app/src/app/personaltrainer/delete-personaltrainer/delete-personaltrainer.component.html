@@ -1,3 +1,41 @@
-<p>
-  delete-personaltrainer works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+   
+            </div>
+          </div>
+        </header>
+      </section>
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>trainerId</th>
+            <th>trainerName</th>
+            <th>trainerSurname</th>
+            <th>trainerPhone</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let trainer of trainers">
+            <th scope="row">{{trainer.trainertId}}</th>
+            <td>{{trainer.trainerName}}</td>
+            <td>{{trainer.trainerSurname}}</td>
+            <td>{{trainer.trainerPhone}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="deletePersonalTrainer(trainer.trainerId)">Delete</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

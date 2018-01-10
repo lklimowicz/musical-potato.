@@ -12,11 +12,11 @@ import {Client} from "../client/client";
 @Injectable()
 export class PersonalTrainerService {
 
-  private apiUrladdTrainer = "http://localhost:8080/addTrainer"
-  private apiUrldeleteTrainer = "http://localhost:8080/deleteTrainer"
+  private apiUrladdTrainer = "http://localhost:8080/addPersonalTrainer"
+  private apiUrldeleteTrainer = "http://localhost:8080/deletePersonalTrainer"
   private apiUrlfindGym = "http://localhost:8080/findGym"
   private apiUrlfindClient = "http://localhost:8080/findClient"
-  private apiUrlfindTrainer = "http://localhost:8080/findTrainer"
+  private apiUrlfindTrainer = "http://localhost:8080/findPersonalTrainer"
 
 
   constructor(private http: Http) { }

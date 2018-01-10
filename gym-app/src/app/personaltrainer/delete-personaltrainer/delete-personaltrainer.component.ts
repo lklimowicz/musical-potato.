@@ -13,8 +13,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class DeletePersonaltrainerComponent implements OnInit {
 
 	personalTrainerForm: FormGroup;
-	personaltrainers: PersonalTrainer[];
-	sprzets: PersonalTrainer[];
+	trainers: PersonalTrainer[];
 
    constructor(private personalTrainerService: PersonalTrainerService,
 	private router: Router) { }
@@ -26,7 +25,7 @@ export class DeletePersonaltrainerComponent implements OnInit {
   getTrainer(){
 	   this.personalTrainerService.findTrainer().subscribe(
       t => {
-        this.sprzets = t;
+        this.trainers = t;
       },
       error => {
         console.log(error);
