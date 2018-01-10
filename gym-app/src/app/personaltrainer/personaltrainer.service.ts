@@ -10,16 +10,16 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class PersonalTrainerService {
-	
+
   private apiUrladdTrainer = "http://localhost:8080/addTrainer"
   private apiUrldeleteTrainer = "http://localhost:8080/deleteTrainer"
   private apiUrlfindGym = "http://localhost:8080/findGym"
   private apiUrlfindClient = "http://localhost:8080/findClient"
   private apiUrlfindTrainer = "http://localhost:8080/findTrainer"
-  
+
 
   constructor(private http: Http) { }
-  
+
   addTrainer(personaltrainer: PersonalTrainer): Observable<PersonalTrainer>{
       return this.http.post(this.apiUrladdTrainer, personaltrainer)
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -30,8 +30,8 @@ export class PersonalTrainerService {
         .map((res: Response) => res.json())
         .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
-  
-  FindTrainer(): Observable<PersonalTrainer[]>{
+
+  findTrainer(): Observable<PersonalTrainer[]>{
       return this.http.get(this.apiUrlfindTrainer)
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -49,6 +49,6 @@ export class PersonalTrainerService {
         .map((res: Response) => res.json())
         .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
-    
+
 
 }
