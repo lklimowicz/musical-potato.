@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PersonalTrainerAddComponent} from "../personaltrainer/add-personaltrainer/add-personaltrainer.component";
 import {PersonalTrainerDeleteComponent} from "../personaltrainer/delete-personaltrainer/delete-personaltrainer.component";
-import {ClientAddComponent} from './add-client/add-client.component';
-import {ClientDeleteComponent} from './delete-client/delete-client.component';
+import {AddClientComponent} from './add-client/add-client.component';
+import {DeleteClientComponent} from './delete-client/delete-client.component';
 
 const routes: Routes = [
-  {path: 'add-client', component: ClientAddComponent},
-  {path: 'delete-client', component: ClientDeleteComponent}
+  {path: 'add-client', component: AddClientComponent},
+  {path: 'delete-client', component: DeleteClientComponent}
 ];
 
 @NgModule({

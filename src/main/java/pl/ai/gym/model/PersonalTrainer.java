@@ -22,13 +22,13 @@ public class PersonalTrainer {
     private  Integer trainerId;
 
     @Column(name ="NAME")
-    private String clientName;
+    private String trainerName;
 
     @Column(name ="SURNAME")
-    private String clientSurname;
+    private String trainerSurname;
 
     @Column(name ="PHONE")
-    private String clientPhone;
+    private String trainerPhone;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_GYM")

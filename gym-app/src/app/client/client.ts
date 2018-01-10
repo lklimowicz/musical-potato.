@@ -6,10 +6,10 @@ export class Client {
   clientPhone: string;
  
 
-  constructor(clientId: number, clientName: string, clientSurame: string, clientPhone: string){
+  constructor(clientId: number, clientName: string, clientSurname: string, clientPhone: string){
     this.clientId = clientId;
     this.clientName= clientName;
-    this.clientSurame= clientSurame;
+    this.clientSurname= clientSurname;
     this.clientPhone= clientPhone;
   }
 }

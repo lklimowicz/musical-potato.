@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {ClientModule} from "./client/client.module";
 import {HttpModule} from "@angular/http";
 import {PersonaltrainerModule} from "./personaltrainer/personaltrainer.module";
+import {GymModule} from "./gym/gym.module";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {PersonaltrainerModule} from "./personaltrainer/personaltrainer.module";
     AppRoutingModule,
     ClientModule,
     PersonaltrainerModule,
+	GymModule,
     HttpModule
   ],
   providers: [],

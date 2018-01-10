@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientRoutingModule } from './client-routing.module';
-import { ClientAddComponent } from './add-client/add-client.component';
+import {AddClientComponent} from './add-client/add-client.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ClientDeleteComponent } from './delete-client/delete-client.component';
+import {DeleteClientComponent} from './delete-client/delete-client.component';
 
 @NgModule({
   imports: [
@@ -13,6 +13,6 @@ import { ClientDeleteComponent } from './delete-client/delete-client.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ClientAddComponent, ClientDeleteComponent]
+  declarations: [AddClientComponent, DeleteClientComponent]
 })
 export class ClientModule { }
