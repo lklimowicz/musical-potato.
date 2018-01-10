@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ClientService} from "../Client.service";
-import {Client} from "../Client";
+import {ClientService} from "../client.service";
+import {Client} from "../client";
 import {Router} from "@angular/router";
 
 
@@ -12,6 +12,8 @@ import {Router} from "@angular/router";
 })
 export class AddClientComponent implements OnInit {
 
+	clientForm: FormGroup;
+
   constructor(private clientService: ClientService,
 	private router: Router) { }
 
@@ -21,8 +23,8 @@ export class AddClientComponent implements OnInit {
 		  surname: new FormControl('', Validators.required),
 		  phone: new FormControl('', Validators.required)
 		    });
-		
-  }	
+
+  }
 	onSubmit() {
     if (this.clientForm.valid) {
       let client: Client = new Client(
@@ -35,7 +37,7 @@ export class AddClientComponent implements OnInit {
       this.clientForm.reset();
       this.router.navigate(['/']);
     }
-  
-	}}	
-	
+
+	}}
+
 

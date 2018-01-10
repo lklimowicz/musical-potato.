@@ -9,9 +9,9 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ClientService {
 
-	private apiUrladdClient = "http://localhost:8080/addClient"
-  private apiUrlfindClient = "http://localhost:8080/findClient"
-  private apiUrldeleteClient = "http://localhost:8080/deleteClient"
+	private apiUrladdClient = "http://localhost:8080/addClient";
+  private apiUrlfindClient = "http://localhost:8080/findClient";
+  private apiUrldeleteClient = "http://localhost:8080/deleteClient";
 
   constructor(private http: Http) { }
 
@@ -26,14 +26,12 @@ export class ClientService {
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-
-  }
   findClient(): Observable<Client[]>{
     return this.http.get(this.apiUrlfindClient)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
-
   }
+
 
 }

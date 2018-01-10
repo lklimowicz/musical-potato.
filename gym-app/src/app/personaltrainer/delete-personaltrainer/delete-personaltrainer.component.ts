@@ -11,19 +11,20 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   providers: [PersonalTrainerService]
 })
 export class DeletePersonaltrainerComponent implements OnInit {
-	
-	personalTrainerForm: formGroup;
+
+	personalTrainerForm: FormGroup;
 	personaltrainers: PersonalTrainer[];
-	
+	sprzets: PersonalTrainer[];
+
    constructor(private personalTrainerService: PersonalTrainerService,
 	private router: Router) { }
-	
+
   ngOnInit() {
 	  this.getTrainer();
   }
-  
+
   getTrainer(){
-	   this.PersonalTrainerService.findTrainer().subscribe(
+	   this.personalTrainerService.findTrainer().subscribe(
       t => {
         this.sprzets = t;
       },
@@ -31,9 +32,9 @@ export class DeletePersonaltrainerComponent implements OnInit {
         console.log(error);
       }
     );}
-	
-	deletePersonalTrainer(trainerId: numer){
-		this.PersonalTrainerService.deleteTrainer(trainerId).subscribe();
+
+	deletePersonalTrainer(trainerId: number){
+		this.personalTrainerService.deleteTrainer(trainerId).subscribe();
 		location.reload();
 	}
 }

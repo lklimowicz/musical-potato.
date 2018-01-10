@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PersonalTrainerAddComponent} from "../personaltrainer/add-personaltrainer/add-personaltrainer.component";
-import {PersonalTrainerDeleteComponent} from "../personaltrainer/delete-personaltrainer/delete-personaltrainer.component";
+import {AddPersonaltrainerComponent} from "../personaltrainer/add-personaltrainer/add-personaltrainer.component";
+import {DeletePersonaltrainerComponent} from "../personaltrainer/delete-personaltrainer/delete-personaltrainer.component";
 import {AddClientComponent} from './add-client/add-client.component';
 import {DeleteClientComponent} from './delete-client/delete-client.component';
 

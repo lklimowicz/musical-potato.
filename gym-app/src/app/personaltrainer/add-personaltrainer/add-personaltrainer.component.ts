@@ -4,6 +4,7 @@ import {PersonalTrainer} from "../personaltrainer";
 import {Gym} from "../../gym/gym";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Client} from "../../client/client";
 
 
 @Component({
@@ -13,42 +14,42 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
    providers: [PersonalTrainerService]
 })
 export class AddPersonaltrainerComponent implements OnInit {
-	
+
 	personalTrainerForm: FormGroup;
-	gyms: Gym[]
-	clients: Client[]
+	gyms: Gym[];
+	clients: Client[];
 
   constructor(private personalTrainerService: PersonalTrainerService,
 	private router: Router) { }
 
   ngOnInit() {
-	  this.getGyms();
-	  this.getClients();
+	  this.getGym();
+	  this.getClient();
 	  this.personalTrainerForm = new FormGroup({
 		  trainerName: new FormControl('', Validators.required),
 		  trainerSurname: new FormControl('', Validators.required),
 		  trainerPhone: new FormControl('', Validators.required),
 		  gym: new FormControl('', Validators.required),
-	  client: new FormControl('', Validators.required))}
+	  client: new FormControl('', Validators.required) })
   }
-  
+
    onSubmit() {
     if (this.personalTrainerForm.valid) {
       let personalTrainer:  PersonalTrainer = new PersonalTrainer(
         null,
-        this.sprzetForm.controls['trainerName'].value,
-        this.sprzetForm.controls['trainerSurname'].value,
-        this.sprzetForm.controls['trainerPhone'].value,
-        this.sprzetForm.controls['gym'].value,
-		this.sprzetForm.controls['client'].value);
-		
-      this.PersonalTrainerService.addPersonalTrainer(personalTrainer).subscribe();
+        this.personalTrainerForm.controls['trainerName'].value,
+        this.personalTrainerForm.controls['trainerSurname'].value,
+        this.personalTrainerForm.controls['trainerPhone'].value,
+        this.personalTrainerForm.controls['gym'].value,
+		this.personalTrainerForm.controls['client'].value);
+
+      this.personalTrainerService.addTrainer(personalTrainer).subscribe();
       this.personalTrainerForm.reset();
       this.router.navigate(['/']);
     }
   }
   getGym() {
-    this.PersonalTrainerService.findGym().subscribe(
+    this.personalTrainerService.findGym().subscribe(
       gy => {
         this.gyms = gy;
       },
@@ -57,9 +58,9 @@ export class AddPersonaltrainerComponent implements OnInit {
       }
     );
   }
-  
+
    getClient() {
-    this.PersonalTrainerService.findClient().subscribe(
+    this.personalTrainerService.findClient().subscribe(
       c => {
         this.clients = c;
       },

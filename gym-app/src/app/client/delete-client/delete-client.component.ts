@@ -27,6 +27,6 @@ export class DeleteClientComponent implements OnInit {
 
 }
 	deleteClient(clientid: number){
-		this.clientService.deleteKlient(clientid).subscribe();
+		this.clientService.deleteClient(clientid).subscribe();
 	location.reload();}
 }
